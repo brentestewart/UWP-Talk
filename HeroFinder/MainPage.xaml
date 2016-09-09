@@ -6,8 +6,38 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <!--<Page.Resources>
+        <Style TargetType="Ellipse" x:Key="BaseEllipse">
+            <Setter Property="Stroke" Value="Black"/>
+            <Setter Property="StrokeThickness" Value="5"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="150"/>
+        </Style>
+        <Style TargetType="Ellipse" x:Key="RedEllipse" BasedOn="{StaticResource BaseEllipse}">
+            <Setter Property="Fill" Value="Red"/>
+        </Style>
+        <Style TargetType="Ellipse" x:Key="GreenEllipse" BasedOn="{StaticResource BaseEllipse}">
+            <Setter Property="Fill" Value="Green"/>
+        </Style>
+        <Style TargetType="Ellipse" x:Key="BlueEllipse" BasedOn="{StaticResource BaseEllipse}">
+            <Setter Property="Fill" Value="Blue"/>
+        </Style>
+        <Style TargetType="Ellipse" BasedOn="{StaticResource BaseEllipse}"></Style>
+    </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    </Grid>
+        <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Ellipse Style="{StaticResource RedEllipse}" />
+        <Ellipse Style="{StaticResource GreenEllipse}" Grid.Column="1" />
+        <Ellipse Style="{StaticResource BlueEllipse}" Grid.Row="1" />
+        <Ellipse Fill="Violet" Grid.Row="1" Grid.Column="1" />
+    </Grid>-->
 </Page>
+

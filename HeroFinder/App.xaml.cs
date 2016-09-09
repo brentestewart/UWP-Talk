@@ -7,6 +7,8 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -14,6 +16,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using HeroFinder.Views;
 
 namespace HeroFinder
 {
@@ -72,11 +75,17 @@ namespace HeroFinder
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                    rootFrame.Navigate(typeof(MainView), e.Arguments);
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
             }
+
+            var titleBar = ApplicationView.GetForCurrentView().TitleBar;
+            titleBar.BackgroundColor = Color.FromArgb(0, 13, 13, 13);
+            titleBar.ForegroundColor = Colors.White;
+            titleBar.ButtonBackgroundColor = Color.FromArgb(0, 13, 13, 13);
+            titleBar.ButtonForegroundColor = Colors.White;
         }
 
         /// <summary>

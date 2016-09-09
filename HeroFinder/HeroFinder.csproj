@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{8581a034-09a2-4c26-8160-cc7a03d133ff}</ProjectGuid>
+    <ProjectGuid>{8581A034-09A2-4C26-8160-CC7A03D133FF}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HeroFinder</RootNamespace>
@@ -16,9 +16,7 @@
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    
     <PackageCertificateKeyFile>HeroFinder_TemporaryKey.pfx</PackageCertificateKeyFile>
-    
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -97,18 +95,26 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Factories\LoremIpsumFactory.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Hero.cs" />
+    <Compile Include="Models\_enums.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\HeroesRepository.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    
     <None Include="HeroFinder_TemporaryKey.pfx" />
-    
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Default.rd.xml" />
@@ -119,6 +125,77 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Resources\Ant-Man_background.jpg" />
+    <Content Include="Resources\ant-man_logo.jpg" />
+    <Content Include="Resources\ant-man_logo.png" />
+    <Content Include="Resources\Aquaman_background.jpg" />
+    <Content Include="Resources\Aquaman_logo.jpg" />
+    <Content Include="Resources\Aquaman_logo.png" />
+    <Content Include="Resources\Atom_Background.jpg" />
+    <Content Include="Resources\Atom_Logo.jpg" />
+    <Content Include="Resources\Atom_Logo.png" />
+    <Content Include="Resources\Batman_Background.jpg" />
+    <Content Include="Resources\Batman_Logo.png" />
+    <Content Include="Resources\Black_Widow_Background.jpg" />
+    <Content Include="Resources\Black_Widow_Logo.jpg" />
+    <Content Include="Resources\Black_Widow_Logo.png" />
+    <Content Include="Resources\Captain_America_Background.jpg" />
+    <Content Include="Resources\Captain_America_Logo.png" />
+    <Content Include="Resources\Cyclops_Background.jpg" />
+    <Content Include="Resources\Cyclops_Logo.png" />
+    <Content Include="Resources\Daredevil_Background.jpg" />
+    <Content Include="Resources\Daredevil_Logo.png" />
+    <Content Include="Resources\Green_Arrow_Background.jpg" />
+    <Content Include="Resources\Green_Arrow_Logo.jpg" />
+    <Content Include="Resources\Green_Arrow_Logo.png" />
+    <Content Include="Resources\Green_Lantern_Background.jpg" />
+    <Content Include="Resources\Green_Lantern_Logo.png" />
+    <Content Include="Resources\Hawkeye_Background.jpg" />
+    <Content Include="Resources\Hawkeye_Logo.jpg" />
+    <Content Include="Resources\Hawkeye_Logo.png" />
+    <Content Include="Resources\Hawkman_Background.jpg" />
+    <Content Include="Resources\Hawkman_Logo.jpg" />
+    <Content Include="Resources\Hawkman_Logo.png" />
+    <Content Include="Resources\Hulk_Background.jpg" />
+    <Content Include="Resources\Hulk_Logo.jpg" />
+    <Content Include="Resources\Hulk_Logo.png" />
+    <Content Include="Resources\Human_Torch_Background.jpg" />
+    <Content Include="Resources\Human_Torch_Logo.jpg" />
+    <Content Include="Resources\Human_Torch_Logo.png" />
+    <Content Include="Resources\Icon_176x176.png" />
+    <Content Include="Resources\Icon_200x200.png" />
+    <Content Include="Resources\Icon_24x24.png" />
+    <Content Include="Resources\Icon_284x284.png" />
+    <Content Include="Resources\Icon_300x300.jpg" />
+    <Content Include="Resources\Icon_300x300.png" />
+    <Content Include="Resources\Icon_310x310.png" />
+    <Content Include="Resources\Icon_50x50.png" />
+    <Content Include="Resources\Icon_620x620.png" />
+    <Content Include="Resources\Icon_88x88.png" />
+    <Content Include="Resources\Ironman_Background.jpg" />
+    <Content Include="Resources\Ironman_Logo.png" />
+    <Content Include="Resources\Spiderman_Background.jpg" />
+    <Content Include="Resources\Spiderman_Logo.jpg" />
+    <Content Include="Resources\Spiderman_Logo.png" />
+    <Content Include="Resources\Splash.jpg" />
+    <Content Include="Resources\Splash.png" />
+    <Content Include="Resources\Splash620x300.png" />
+    <Content Include="Resources\Storm_Background.jpg" />
+    <Content Include="Resources\Storm_Logo.jpg" />
+    <Content Include="Resources\Storm_Logo.png" />
+    <Content Include="Resources\Supergirl_Background.jpg" />
+    <Content Include="Resources\Supergirl_Logo.jpg" />
+    <Content Include="Resources\Supergirl_Logo.png" />
+    <Content Include="Resources\Superman_Background.jpg" />
+    <Content Include="Resources\Superman_logo.jpg" />
+    <Content Include="Resources\Superman_logo.png" />
+    <Content Include="Resources\The_Flash_Background.jpg" />
+    <Content Include="Resources\The_Flash_Logo.png" />
+    <Content Include="Resources\Wolverine_Background.jpg" />
+    <Content Include="Resources\Wolverine_Logo.jpg" />
+    <Content Include="Resources\Wolverine_Logo.png" />
+    <Content Include="Resources\Wonder_Woman_Background.jpg" />
+    <Content Include="Resources\Wonder_Woman_Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -129,12 +206,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
-  
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
-
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
